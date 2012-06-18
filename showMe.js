@@ -1,5 +1,5 @@
 var nowDate = new Date();
-var PFurlGrab = location.search.substr(1).split("preview=");
+var PFurlGrab = location.search.substr(1).split("showme=");
 var previewPlease = false;
 
 function addZeroToDate(checkThisVar) {
@@ -16,7 +16,7 @@ function convertThisDate(dateToConvert) {
     return dateToConvert;
 }
 
-function showMeThisZone(showZone, startTime, endTime) {
+function showMe(showZone, startTime, endTime) {
     var SLYear = nowDate.getFullYear();
     var SLMonth = nowDate.getMonth();
     SLMonth += 1;
