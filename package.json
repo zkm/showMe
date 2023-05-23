@@ -6,7 +6,7 @@
   "author": "Zach Schneider",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dashboard -- webpack serve --config webpack.config.dev.js",
+    "start": "webpack-dashboard -- webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack-dashboard -- webpack --config webpack.config.prod.js",
     "test": "jest"
   },
