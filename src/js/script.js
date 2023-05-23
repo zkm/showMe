@@ -1,5 +1,5 @@
 // Add leading zero to a number if it has only one digit
-const addZeroToDate = (checkThisVar) => {
+const addZeroToDate = (number) => {
   return number < 10 ? `0${number}` : `${number}`;
 };
 
@@ -35,9 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Export the utility functions and showMe function
-module.exports = {
-  addZeroToDate,
-  convertDateToYYYYMMDD,
-  showMe,
-};
+// Export the functions for testing
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    addZeroToDate,
+    convertDateToYYYYMMDD,
+    showMe
+  };
+}

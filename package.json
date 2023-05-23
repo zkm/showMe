@@ -2,22 +2,19 @@
   "name": "showme",
   "version": "1.0.0",
   "description": "This JavaScript file provides a function called `showMe()` that allows you to show or hide a specific element on a webpage based on a date comparison.",
-  "main": "index.html",
+  "main": "server.js",
+  "author": "Zach Schneider",
+  "license": "MIT",
   "scripts": {
     "start": "node server.js",
     "test": "jest"
   },
-  "author": "Zach Schneider",
-  "license": "MIT",
   "devDependencies": {
-    "fs": "0.0.1-security",
+    "babel-jest": "^27.0.6",
+    "express": "^4.18.2",
     "jest": "^27.0.6",
-    "jsdom": "^17.0.0"
-  },
-  "jest": {
-    "testEnvironment": "jsdom"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
+    "jsdom": "^17.0.0",
+    "jsdom-global": "^3.0.2",
+    "text-encoding": "^0.7.0"
   }
 }
