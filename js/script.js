@@ -1,52 +1,27 @@
-// Get the current date
-const nowDate = new Date();
-
-// Flag to indicate preview mode
-let previewPlease = false;
-
 // Add leading zero to a number if it has only one digit
 const addZeroToDate = (checkThisVar) => {
-  return checkThisVar.toString().padStart(2, "0");
+  return number < 10 ? `0${number}` : `${number}`;
 };
 
 // Convert date from "mm/dd/yyyy" format to "yyyymmdd"
-const convertDateToYYYYMMDD = (dateToConvert) => {
-  const [month, day, year] = dateToConvert.split("/");
+function convertDateToYYYYMMDD(dateString) {
+  const dateParts = dateString.split("/");
+  const year = dateParts[2];
+  const month = addZeroToDate(dateParts[0]);
+  const day = addZeroToDate(dateParts[1]);
   return `${year}${month}${day}`;
-};
+}
 
 // Show or hide element based on start and end dates
 function showMe(showZone, startTime, endTime) {
   const currentDate = new Date();
-  const currentYear = currentDate.getFullYear();
-  const currentMonth = currentDate.getMonth() + 1; // Adding 1 to match date format
-  const currentDay = currentDate.getDate();
-  const formattedCurrentDate = `${currentYear}${addZeroToDate(
-    currentMonth
-  )}${addZeroToDate(currentDay)}`;
+  const startDate = new Date(startTime);
+  const endDate = new Date(endTime);
 
-  startTime = convertThisDate(startTime);
-  endTime = convertThisDate(endTime);
-
-  if (PFurlGrab[1] !== undefined) {
-    formattedCurrentDate = convertThisDate(PFurlGrab[1]);
-    previewPlease = true;
-  }
-
-  if (startTime <= formattedCurrentDate && endTime >= formattedCurrentDate) {
-    document.addEventListener("DOMContentLoaded", () => {
-      const elements = document.querySelectorAll(`.hide#${showZone}`);
-      elements.forEach((element) => {
-        element.style.display = "block";
-      });
-    });
+  if (currentDate >= startDate && currentDate <= endDate) {
+    document.getElementById(showZone).style.display = "block";
   } else {
-    document.addEventListener("DOMContentLoaded", () => {
-      const elements = document.querySelectorAll(`.hide#${showZone}`);
-      elements.forEach((element) => {
-        element.style.display = "none";
-      });
-    });
+    document.getElementById(showZone).style.display = "none";
   }
 }
 
@@ -59,3 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
     showMe(showZone, startTime, endTime);
   });
 });
+
+// Export the utility functions and showMe function
+module.exports = {
+  addZeroToDate,
+  convertDateToYYYYMMDD,
+  showMe,
+};
