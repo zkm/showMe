@@ -5,7 +5,7 @@ var previewPlease = false;
 function addZeroToDate(checkThisVar) {
   checkThisVar += "";
   if (checkThisVar.length == 1) {
-    checkThisVar = 0 + checkThisVar;
+    checkThisVar = "0" + checkThisVar;
   }
   return checkThisVar;
 }
@@ -33,8 +33,11 @@ function showMe(showZone, startTime, endTime) {
   }
   //alert("starTime:"+startTime+" runTime:" + runAtDate + " endTime:"+endTime);
   if (startTime <= runAtDate && endTime >= runAtDate) {
-    $(function () {
-      $(".hide#" + showZone).css("display", "block");
+    document.addEventListener("DOMContentLoaded", function () {
+      var elements = document.querySelectorAll(".hide#" + showZone);
+      elements.forEach(function (element) {
+        element.style.display = "block";
+      });
     });
   }
 }
