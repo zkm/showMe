@@ -1,32 +1,27 @@
 <html>
 
 <head>
-	<title>ShowME</title>
+	<title>JavaScript Show/Hide Element based on Date</title>
 	<script src="js/showme.js"></script>
-	<style>
-		.hide {
-			display: none;
-		}
-	</style>
+	<style>.hide {display: none;}</style>
 </head>
 
 <body>
 	<ul>
-		<!-- DIV 1 -->
-		<script>showMe("div_1", "05/01/2023", "05/15/2050");</script>
-		<li class="hide" id="div_1">Date: 05/01/2023 - 05/15/2050</li>
-
-		<!-- DIV 2 -->
-		<script>showMe("div_2", "06/29/2022", "06/30/2023");</script>
-		<li class="hide" id="div_2">Date: 06/29/2022 - 06/30/2023</li>
-
-		<!-- DIV 3 -->
-		<script>showMe("div_3", "06/03/2012", "06/16/2012");</script>
-		<li class="hide" id="div_3">Date: 06/03/2012 - 06/16/2012</li>
-
-		<!-- DIV 4 -->
-		<script>showMe("div_4", "06/17/2012", "06/30/2012");</script>
-		<li class="hide" id="div_4">Date: 06/17/2012 - 06/30/2012</li>
+		<ul>
+			<!-- Date Block 1 -->
+			<li class="hide" id="div_1" data-start="05/01/2023" data-end="05/15/2050">Date: 05/01/2023 - 05/15/2050</li>
+		  
+			<!-- Date Block 2 -->
+			<li class="hide" id="div_2" data-start="06/29/2022" data-end="06/30/2023">Date: 06/29/2022 - 06/30/2023</li>
+		  
+			<!-- Date Block 3 -->
+			<li class="hide" id="div_3" data-start="06/03/2012" data-end="06/16/2012">Date: 06/03/2012 - 06/16/2012</li>
+		  
+			<!-- Date Block 4 -->
+			<li class="hide" id="div_4" data-start="06/17/2012" data-end="06/30/2012">Date: 06/17/2012 - 06/30/2012</li>
+		  </ul>
+		  
 	</ul>
 </body>
 

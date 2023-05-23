@@ -1,43 +1,55 @@
-var nowDate = new Date();
-var PFurlGrab = location.search.substr(1).split("showme=");
-var previewPlease = false;
+// Get the current date
+const nowDate = new Date();
 
-function addZeroToDate(checkThisVar) {
-  checkThisVar += "";
-  if (checkThisVar.length == 1) {
-    checkThisVar = "0" + checkThisVar;
-  }
-  return checkThisVar;
-}
+// Flag to indicate preview mode
+let previewPlease = false;
 
-function convertThisDate(dateToConvert) {
-  var startSplit = dateToConvert.split("/");
-  dateToConvert = startSplit[2] + startSplit[0] + startSplit[1];
-  return dateToConvert;
-}
+// Add leading zero to a number if it has only one digit
+const addZeroToDate = (checkThisVar) => {
+  return checkThisVar.toString().padStart(2, '0');
+};
 
-function showMe(showZone, startTime, endTime) {
-  var SLYear = nowDate.getFullYear();
-  var SLMonth = nowDate.getMonth();
-  SLMonth += 1;
-  var SLDay = nowDate.getDate();
+// Convert date from "mm/dd/yyyy" format to "yyyymmdd"
+const convertDateToYYYYMMDD = (dateToConvert) => {
+  const [month, day, year] = dateToConvert.split("/");
+  return `${year}${month}${day}`;
+};
+
+// Show or hide element based on start and end dates
+const showMe = (showZone, startTime, endTime) => {
+  const SLYear = nowDate.getFullYear();
+  let SLMonth = nowDate.getMonth() + 1;
+  let SLDay = nowDate.getDate();
+
   SLMonth = addZeroToDate(SLMonth);
   SLDay = addZeroToDate(SLDay);
-  var runAtDate = "" + SLYear + SLMonth + SLDay;
-  startTime = convertThisDate(startTime);
-  endTime = convertThisDate(endTime);
-  if (PFurlGrab[1] != undefined) {
-    runAtDate = PFurlGrab[1];
-    runAtDate = convertThisDate(runAtDate);
+
+  const runAtDate = `${SLYear}${SLMonth}${SLDay}`;
+
+  startTime = convertDateToYYYYMMDD(startTime);
+  endTime = convertDateToYYYYMMDD(endTime);
+
+  const urlParams = new URLSearchParams(location.search);
+  const showmeParam = urlParams.get("showme");
+
+  if (showmeParam !== null) {
     previewPlease = true;
   }
-  //alert("starTime:"+startTime+" runTime:" + runAtDate + " endTime:"+endTime);
+
   if (startTime <= runAtDate && endTime >= runAtDate) {
-    document.addEventListener("DOMContentLoaded", function () {
-      var elements = document.querySelectorAll(".hide#" + showZone);
-      elements.forEach(function (element) {
-        element.style.display = "block";
-      });
+    const elements = document.querySelectorAll(`.hide#${showZone}`);
+    elements.forEach((element) => {
+      element.style.display = "block";
     });
   }
-}
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".hide");
+  elements.forEach((element) => {
+    const showZone = element.id;
+    const startTime = element.dataset.start;
+    const endTime = element.dataset.end;
+    showMe(showZone, startTime, endTime);
+  });
+});
