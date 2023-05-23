@@ -19,7 +19,9 @@ To use the `showMe()` function in your JavaScript code, follow these steps:
 ```html 
  <script src="path/to/script.js"></script>
 ```
-2.  Add the appropriate CSS class and data attributes to the elements you want to show or hide. For example:
+2.  Add the appropriate CSS class and data attributes to the elements you want to show or hide. In this example, the element has the class "hide", an ID of "div\_1", and data attributes specifying the start and end dates.
+
+For example:
 
 ```html 
   <div class="hide" id="div_1" data-start="5/1/2023" data-end="5/15/2050">
@@ -27,9 +29,10 @@ To use the `showMe()` function in your JavaScript code, follow these steps:
   </div>
 ```
 
-In this example, the element has the class "hide", an ID of "div\_1", and data attributes specifying the start and end dates.
 
-3.  Ensure that the `showMe()` function is called after the DOM has been loaded. The function is automatically called when the DOMContentLoaded event is triggered. For example:
+3.  Ensure that the `showMe()` function is called after the DOM has been loaded. The function is automatically called when the DOMContentLoaded event is triggered. 
+
+For example:
 
 ```javascript
   document.addEventListener("DOMContentLoaded", () => {
