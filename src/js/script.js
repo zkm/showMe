@@ -1,5 +1,3 @@
-import '../css/styles.css';
-
 // Add leading zero to a number if it has only one digit
 const addZeroToDate = (number) => {
   return number < 10 ? `0${number}` : `${number}`;
