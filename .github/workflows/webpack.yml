@@ -2,11 +2,9 @@ name: NodeJS with Webpack
 
 on:
   push:
-    branches:
-      - master
+    branches: [ "master" ]
   pull_request:
-    branches:
-      - master
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -17,16 +15,15 @@ jobs:
         node-version: [14.x, 16.x, 18.x]
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies
-        run: npm install
+    - name: Install Dependencies
+      run: npm install
 
-      - name: Build with Webpack
-        run: npx webpack
+    - name: Build
+      run: npm run build
