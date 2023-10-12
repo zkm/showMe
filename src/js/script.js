@@ -1,9 +1,7 @@
-// Add leading zero to a number if it has only one digit
 const addZeroToDate = (number) => {
   return number < 10 ? `0${number}` : `${number}`;
 };
 
-// Convert date from "mm/dd/yyyy" format to "yyyymmdd"
 function convertDateToYYYYMMDD(dateString) {
   const dateParts = dateString.split("/");
   const year = dateParts[2];
@@ -12,16 +10,21 @@ function convertDateToYYYYMMDD(dateString) {
   return `${year}${month}${day}`;
 }
 
-// Show or hide element based on start and end dates
-function showMe(showZone, startTime, endTime) {
+function showOrHideElement(elementId, startDate, endDate) {
   const currentDate = new Date();
-  const startDate = new Date(startTime);
-  const endDate = new Date(endTime);
+  const startDateObj = new Date(startDate);
+  const endDateObj = new Date(endDate);
 
-  if (currentDate >= startDate && currentDate <= endDate) {
-    document.getElementById(showZone).style.display = "block";
+  if (!isNaN(startDateObj) && !isNaN(endDateObj) && currentDate >= startDateObj && currentDate <= endDateObj) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.style.display = "block";
+    }
   } else {
-    document.getElementById(showZone).style.display = "none";
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.style.display = "none";
+    }
   }
 }
 
@@ -31,15 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const showZone = element.id;
     const startTime = element.dataset.start;
     const endTime = element.dataset.end;
-    showMe(showZone, startTime, endTime);
+    showOrHideElement(showZone, startTime, endTime);
   });
 });
 
-// Export the functions for testing
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     addZeroToDate,
     convertDateToYYYYMMDD,
-    showMe
+    showOrHideElement
   };
 }
