@@ -14,7 +14,7 @@ module.exports = {
       directory: path.resolve(__dirname, "dist"),
     },
     open: true, // Open the browser automatically
-    port: 8080, // Port number to run the server on
+    port: 8012, // Port number to run the server on
   },
   devtool: 'eval-source-map',
   plugins: [
