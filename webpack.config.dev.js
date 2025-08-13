@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   mode: "development",
@@ -21,19 +20,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "index.html",
-    }),
-    new DashboardPlugin({
-      customOptions: {
-        logLevel: "info",
-        minWidth: 500,
-        minHeight: 300,
-        borderRadius: 10,
-        theme: {
-          scheme: "monokai",
-          author: "wimer hazenberg (http://www.monokai.nl)",
-          base00: "#272822", 
-        },
-      },
     }),
   ],
 };

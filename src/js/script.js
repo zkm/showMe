@@ -38,6 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Expose showMe globally for browser and test compatibility
+if (typeof window !== 'undefined') {
+  window.showMe = showOrHideElement;
+}
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     addZeroToDate,

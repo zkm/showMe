@@ -6,7 +6,7 @@
   "author": "Zach Schneider",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dashboard -- webpack-dev-server --config webpack.config.dev.js",
+  "start": "webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js",
     "test": "jest"
   },
@@ -23,7 +23,9 @@
     "text-encoding": "^0.7.0",
     "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1",
-    "webpack-dashboard": "^3.3.8",
-    "webpack-dev-server": "^4.15.0"
+    "webpack-dev-server": "^5.2.1"
+  },
+  "dependencies": {
+    "tmp": "^0.2.4"
   }
 }
