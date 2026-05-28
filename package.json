@@ -25,7 +25,7 @@
     "webpack-dev-server": "^5.2.3"
   },
   "dependencies": {
-    "tmp": "^0.2.5"
+    "tmp": "^0.2.6"
   },
   "packageManager": "yarn@4.13.0"
 }
