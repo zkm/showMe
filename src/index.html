@@ -9,35 +9,111 @@
   </head>
 
   <body>
-    <!-- Date Block 1 -->
-    <div class="hide" id="div_1" data-start="8/1/2025" data-end="8/31/2025">
-      <p>Date: 8/1/2025 &ndash; 8/31/2025</p>
-    </div>
+    <main class="page-shell">
+      <header class="hero span-12">
+        <p class="eyebrow">ShowMe JavaScript Logic</p>
+        <h1>Date Windows Rendered by Live JavaScript Checks</h1>
+        <p class="intro">
+          A lightweight script scans each <code>.hide</code> block, parses its
+          <code>data-start</code> and <code>data-end</code> range, and decides
+          in real time whether it should render.
+        </p>
+        <p class="intro">
+          The behavior is driven from <code>src/js/script.js</code>, so content
+          scheduling stays declarative in HTML while logic remains centralized
+          and testable.
+        </p>
+      </header>
 
-    <!-- Date Block 2 -->
-    <div class="hide" id="div_2" data-start="8/1/2025" data-end="8/30/2025">
-      <p>Date: 8/1/2025 &ndash; 8/30/2025</p>
-    </div>
+      <section class="grid-12" aria-label="Date blocks">
+        <aside class="logic-panel span-4" aria-label="How the script works">
+          <p class="panel-kicker">Execution Flow</p>
+          <h2>What Happens on Page Load</h2>
+          <ol>
+            <li>Wait for <code>DOMContentLoaded</code>.</li>
+            <li>Find all elements with class <code>.hide</code>.</li>
+            <li>Read <code>data-start</code>/<code>data-end</code>.</li>
+            <li>Toggle <code>style.display</code> based on today.</li>
+          </ol>
+          <p class="panel-note">
+            Rule: if <code>now &gt;= start &amp;&amp; now &lt;= end</code> show
+            the block, otherwise hide it.
+          </p>
+        </aside>
 
-    <!-- Date Block 3 -->
-    <div class="hide" id="div_3" data-start="6/3/2012" data-end="6/16/2012">
-      <p>Date: 6/03/2012 &ndash; 6/16/2012</p>
-    </div>
+        <!-- Date Block 1 -->
+        <div
+          class="hide date-card span-8 tone-ocean"
+          id="div_1"
+          data-start="6/1/2026"
+          data-end="6/30/2026"
+        >
+          <p class="card-kicker">Window 01</p>
+          <h3>June Feature Launch</h3>
+          <p class="card-date">Date: 6/1/2026 &ndash; 6/30/2026</p>
+        </div>
 
-    <!-- Date Block 4 -->
-    <div class="hide" id="div_4" data-start="6/17/2012" data-end="6/30/2012">
-      <p>Date: 6/17/2012 &ndash; 6/30/2012</p>
-    </div>
+        <!-- Date Block 2 -->
+        <div
+          class="hide date-card span-4 tone-coral"
+          id="div_2"
+          data-start="5/25/2026"
+          data-end="6/10/2026"
+        >
+          <p class="card-kicker">Window 02</p>
+          <h3>Beta Access</h3>
+          <p class="card-date">Date: 5/25/2026 &ndash; 6/10/2026</p>
+        </div>
 
-    <!-- Date Block 5 -->
-    <div class="hide" id="div_5" data-start="2/14/2024" data-end="2/28/2024">
-      <p>Date: 2/14/2024 &ndash; 2/28/2024</p>
-    </div>
+        <!-- Date Block 3 -->
+        <div
+          class="hide date-card span-4 tone-lime"
+          id="div_3"
+          data-start="5/15/2026"
+          data-end="7/1/2026"
+        >
+          <p class="card-kicker">Window 03</p>
+          <h3>Community Sprint</h3>
+          <p class="card-date">Date: 5/15/2026 &ndash; 7/1/2026</p>
+        </div>
 
-    <!-- Date Block 6 -->
-    <div class="hide" id="div_6" data-start="11/5/2023" data-end="11/20/2023">
-      <p>Date: 11/5/2023 &ndash; 11/20/2023</p>
-    </div>
+        <!-- Date Block 4 -->
+        <div
+          class="hide date-card span-4 tone-ocean"
+          id="div_4"
+          data-start="7/1/2026"
+          data-end="7/15/2026"
+        >
+          <p class="card-kicker">Window 04</p>
+          <h3>Summer Promotion</h3>
+          <p class="card-date">Date: 7/1/2026 &ndash; 7/15/2026</p>
+        </div>
+
+        <!-- Date Block 5 -->
+        <div
+          class="hide date-card span-4 tone-coral"
+          id="div_5"
+          data-start="4/1/2026"
+          data-end="4/15/2026"
+        >
+          <p class="card-kicker">Window 05</p>
+          <h3>Archived Campaign</h3>
+          <p class="card-date">Date: 4/1/2026 &ndash; 4/15/2026</p>
+        </div>
+
+        <!-- Date Block 6 -->
+        <div
+          class="hide date-card span-4 tone-lime"
+          id="div_6"
+          data-start="6/20/2026"
+          data-end="7/20/2026"
+        >
+          <p class="card-kicker">Window 06</p>
+          <h3>Mid-Summer Release</h3>
+          <p class="card-date">Date: 6/20/2026 &ndash; 7/20/2026</p>
+        </div>
+      </section>
+    </main>
 
     <script src="./js/script.js"></script>
   </body>

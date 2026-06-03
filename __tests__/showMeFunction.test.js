@@ -31,13 +31,13 @@ describe("showMe function", () => {
 
     const scriptCode = fs.readFileSync(
       path.resolve(__dirname, "../src/js/script.js"),
-      "utf-8"
+      "utf-8",
     );
     window.eval(scriptCode);
 
     const styles = fs.readFileSync(
       path.resolve(__dirname, "../src/css/styles.css"),
-      "utf-8"
+      "utf-8",
     );
     const styleElement = window.document.createElement("style");
     styleElement.innerHTML = styles;

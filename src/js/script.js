@@ -15,7 +15,12 @@ function showOrHideElement(elementId, startDate, endDate) {
   const startDateObj = new Date(startDate);
   const endDateObj = new Date(endDate);
 
-  if (!isNaN(startDateObj) && !isNaN(endDateObj) && currentDate >= startDateObj && currentDate <= endDateObj) {
+  if (
+    !isNaN(startDateObj) &&
+    !isNaN(endDateObj) &&
+    currentDate >= startDateObj &&
+    currentDate <= endDateObj
+  ) {
     const element = document.getElementById(elementId);
     if (element) {
       element.style.display = "block";
@@ -39,14 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Expose showMe globally for browser and test compatibility
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   window.showMe = showOrHideElement;
 }
 
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     addZeroToDate,
     convertDateToYYYYMMDD,
-    showOrHideElement
+    showOrHideElement,
   };
 }
