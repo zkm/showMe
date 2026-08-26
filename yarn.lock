@@ -1519,13 +1519,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"brace-expansion@npm:1.1.13":
-  version: 1.1.13
-  resolution: "brace-expansion@npm:1.1.13"
+"brace-expansion@npm:1.1.16":
+  version: 1.1.16
+  resolution: "brace-expansion@npm:1.1.16"
   dependencies:
     balanced-match: "npm:^1.0.0"
     concat-map: "npm:0.0.1"
-  checksum: 10/b5f4329fdbe9d2e25fa250c8f866ebd054ba946179426e99b86dcccddabdb1d481f0e40ee5430032e62a7d0a6c2837605ace6783d015aa1d65d85ca72154d936
+  checksum: 10/94498bead66c51536df5b7bf1b0a0e581a5b7f86888be10481d06920c4bd9d976e003b13a3d19fddc733f21a09d162ff72f90e18b2c9d062b15121e973d0e13b
   languageName: node
   linkType: hard
 
@@ -2624,10 +2624,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ip-address@npm:10.2.1":
-  version: 10.2.1
-  resolution: "ip-address@npm:10.2.1"
-  checksum: 10/8ac133a975c1372364a7bda4a9099ec280b5b0bee44ffc26b36b1c4bb01600860260a72dd1df24123208ea976991fe46572e8d2f70350a1f502a369539862759
+"ip-address@npm:10.2.2":
+  version: 10.2.2
+  resolution: "ip-address@npm:10.2.2"
+  checksum: 10/351c470d323d874b79c5525d1701a4a4d1d41eb77806702a64d328100903b6a949ed2d31b833f54ec8068deff408142e2a5823f0c9a142d26f8f1da0117de773
   languageName: node
   linkType: hard
 
@@ -3225,14 +3225,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:^4.1.0":
-  version: 4.2.0
-  resolution: "js-yaml@npm:4.2.0"
+"js-yaml@npm:4.3.0":
+  version: 4.3.0
+  resolution: "js-yaml@npm:4.3.0"
   dependencies:
     argparse: "npm:^2.0.1"
   bin:
     js-yaml: bin/js-yaml.js
-  checksum: 10/51de2067a2b44b07ba5206132e56005f8b568ff279bb4d2f645068958c56fa4827d40a6841c983234671fa0a134bf094d0b0717873c2a3d319185297af145a6d
+  checksum: 10/2bcec3a8118d7f744badeb04e14366578d234a736f353d41fe35d2305e4ce2409a8e041d277f07cd6bbc8aaa12128d650a68ce43247072519bede20962d2126f
   languageName: node
   linkType: hard
 
@@ -4296,16 +4296,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tar@npm:7.5.16":
-  version: 7.5.16
-  resolution: "tar@npm:7.5.16"
+"tar@npm:7.5.18":
+  version: 7.5.18
+  resolution: "tar@npm:7.5.18"
   dependencies:
     "@isaacs/fs-minipass": "npm:^4.0.0"
     chownr: "npm:^3.0.0"
     minipass: "npm:^7.1.2"
     minizlib: "npm:^3.1.0"
     yallist: "npm:^5.0.0"
-  checksum: 10/fafa22efceb9f056bf29ddc47d9bd90bb82fe3ce57b8d1242fc45771251741964cebba69d4e14a24fd1643f3c7f68478e945a19def534703cf370c2d9dca2e09
+  checksum: 10/4bccf496338947109edcbe83c76ac4685b43e22e991f8991817482ba7b6a61c45a1d6d8bc476735d95bd436f02c2a93b9e3f401ba25b9b940d84a01f41e33afc
   languageName: node
   linkType: hard
 
