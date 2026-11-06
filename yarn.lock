@@ -2613,10 +2613,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ip-address@npm:10.7.3":
-  version: 10.7.3
-  resolution: "ip-address@npm:10.7.3"
-  checksum: 10/04655aa25ad682bb26ecb82281c9d3ecd99da8ecde9c95146f0a96685de90a359432d905bf6c53b5732fed0bfb1f93763cd3c91c3f266eec96cc41bfea987197
+"ip-address@npm:10.7.6":
+  version: 10.7.6
+  resolution: "ip-address@npm:10.7.6"
+  checksum: 10/16b2604753400f8eedb17d482f9cdbb6e8ca6dac31bcb6fa6984e6098091ac58acd92990cc4d09a9ee96936b6ab19fd60e5622f4add52bd7d2465969a04e2ca9
   languageName: node
   linkType: hard
 
